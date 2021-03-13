@@ -1,4 +1,5 @@
 rootProject.name = "BestFeed"
 include(
-    ":app"
+    ":app",
+    ":feature-main"
 )
