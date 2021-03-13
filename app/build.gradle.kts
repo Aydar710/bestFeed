@@ -54,7 +54,7 @@ android {
 
 dependencies {
 
-    implementation(Modules.featureMain)
+    implementation(project(Modules.featureMain))
 
     implementation(Libs.Navigation.ui)
     implementation(Libs.Navigation.fragment)
@@ -63,5 +63,5 @@ dependencies {
     implementation(Libs.Google.play)
     implementation(Libs.Google.material)
 
-    implementation(Libs.viewBindingPropertyDelegate)
+//    implementation(Libs.viewBindingPropertyDelegate)
 }

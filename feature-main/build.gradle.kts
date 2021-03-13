@@ -16,5 +16,13 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.featureMain))
+
+    implementation(Libs.Navigation.ui)
+    implementation(Libs.Navigation.fragment)
+    implementation(Libs.Layout.constraintLayout)
+
+    implementation(Libs.Google.play)
+    implementation(Libs.Google.material)
+
+//    implementation(Libs.viewBindingPropertyDelegate)
 }

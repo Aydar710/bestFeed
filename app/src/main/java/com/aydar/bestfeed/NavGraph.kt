@@ -7,7 +7,7 @@ object NavGraph {
     val id = id_counter++
 
     object dest {
-        val main = id_counter++
+        val home = id_counter++
     }
 
     object action {
