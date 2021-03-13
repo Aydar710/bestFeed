@@ -15,6 +15,7 @@ object DefaultConfig {
 
 object Modules {
     const val featureMain = ":feature-main"
+    const val data = ":data"
 }
 
 object Libs {
@@ -35,6 +36,31 @@ object Libs {
     object Lifecycle {
         private const val version = "2.3.0-beta01"
         const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
+        const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+        val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+        val extension = "android.arch.lifecycle:extensions:1.1.1"
+    }
+
+    object ActivityKtx{
+        const val activityKtx = "androidx.activity:activity-ktx:1.1.0"
+    }
+
+    object Coroutines {
+        val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5"
+        val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5"
+    }
+
+    object Hilt{
+        const val hilt = "com.google.dagger:hilt-android:2.28-alpha"
+        const val androidCompilerKapt = "com.google.dagger:hilt-android-compiler:2.28-alpha"
+        const val lifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
+        const val hiltCompilerKapt = "androidx.hilt:hilt-compiler:1.0.0-alpha01"
+    }
+
+    object Retrofit{
+        const val retrofit = "com.squareup.retrofit2:retrofit:2.6.0"
+        const val gsonConverter = "com.squareup.retrofit2:converter-gson:2.6.0"
+        const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.5.0"
     }
 
     object Google {

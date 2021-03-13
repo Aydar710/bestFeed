@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -55,6 +56,7 @@ android {
 dependencies {
 
     implementation(project(Modules.featureMain))
+    implementation(project(Modules.data))
 
     implementation(Libs.Navigation.ui)
     implementation(Libs.Navigation.fragment)
@@ -62,6 +64,17 @@ dependencies {
 
     implementation(Libs.Google.play)
     implementation(Libs.Google.material)
+
+    // Hilt
+    implementation(Libs.Hilt.hilt)
+    kapt(Libs.Hilt.androidCompilerKapt)
+    implementation(Libs.Hilt.lifecycleViewModel)
+    kapt(Libs.Hilt.hiltCompilerKapt)
+
+    // Retrofit
+    implementation(Libs.Retrofit.retrofit)
+    implementation(Libs.Retrofit.gsonConverter)
+    implementation(Libs.Retrofit.loggingInterceptor)
 
 //    implementation(Libs.viewBindingPropertyDelegate)
 }
