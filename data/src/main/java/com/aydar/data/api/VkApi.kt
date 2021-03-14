@@ -8,9 +8,8 @@ interface VkApi {
 
     @GET("wall.get")
     suspend fun getGroupPosts(
-        @Query("owner_id") ownerId: String,
+        @Query("domain") domain: String,
         @Query("count") count: String,
-        @Query("offset") offset: String = "0",
-        @Query("access_token") access_token: String
+        @Query("offset") offset: String = "0"
     ): GroupWallResponseWrapper
 }

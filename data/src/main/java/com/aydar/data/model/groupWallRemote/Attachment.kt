@@ -7,7 +7,6 @@ data class Attachment (
 
     @SerializedName("type")
     @Expose
-    //TODO
     val type: String? = null,
     @SerializedName("photo")
     @Expose
