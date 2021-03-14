@@ -57,6 +57,7 @@ dependencies {
 
     implementation(project(Modules.featureMain))
     implementation(project(Modules.data))
+    implementation(project(Modules.domain))
 
     implementation(Libs.Navigation.ui)
     implementation(Libs.Navigation.fragment)
@@ -75,6 +76,8 @@ dependencies {
     implementation(Libs.Retrofit.retrofit)
     implementation(Libs.Retrofit.gsonConverter)
     implementation(Libs.Retrofit.loggingInterceptor)
+
+    implementation(Libs.vkSdk)
 
 //    implementation(Libs.viewBindingPropertyDelegate)
 }

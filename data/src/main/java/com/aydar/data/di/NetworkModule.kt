@@ -43,6 +43,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideVkApi(retrofit: Retrofit) = retrofit.create(VkApi::class.java)
+    fun provideVkApi(retrofit: Retrofit)  = retrofit.create(VkApi::class.java)
 
 }

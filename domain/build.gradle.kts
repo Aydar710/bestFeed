@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -17,14 +18,7 @@ android {
 
 dependencies {
 
-    implementation(project(Modules.domain))
-
-    implementation(Libs.Navigation.ui)
-    implementation(Libs.Navigation.fragment)
-    implementation(Libs.Layout.constraintLayout)
-
-    implementation(Libs.Google.play)
-    implementation(Libs.Google.material)
+    api(project(Modules.data))
 
     // Hilt
     implementation(Libs.Hilt.hilt)
@@ -36,8 +30,6 @@ dependencies {
     implementation(Libs.Retrofit.retrofit)
     implementation(Libs.Retrofit.gsonConverter)
     implementation(Libs.Retrofit.loggingInterceptor)
-
-    implementation(Libs.vkSdk)
 
 //    implementation(Libs.viewBindingPropertyDelegate)
 }

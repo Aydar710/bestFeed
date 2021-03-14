@@ -16,12 +16,15 @@ object DefaultConfig {
 object Modules {
     const val featureMain = ":feature-main"
     const val data = ":data"
+    const val domain = ":domain"
 }
 
 object Libs {
 
     const val viewBindingPropertyDelegate =
         "com.github.kirich1409:ViewBindingPropertyDelegate:1.2.2"
+
+    const val vkSdk = "com.vk:androidsdk:2.0.0"
 
     object Layout {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4"
