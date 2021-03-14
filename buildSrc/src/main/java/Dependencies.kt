@@ -22,7 +22,7 @@ object Modules {
 object Libs {
 
     const val viewBindingPropertyDelegate =
-        "com.github.kirich1409:ViewBindingPropertyDelegate:1.2.2"
+        "com.github.kirich1409:viewbindingpropertydelegate:1.4.4"
 
     const val vkSdk = "com.vk:androidsdk:2.0.0"
 
@@ -44,7 +44,7 @@ object Libs {
         val extension = "android.arch.lifecycle:extensions:1.1.1"
     }
 
-    object ActivityKtx{
+    object ActivityKtx {
         const val activityKtx = "androidx.activity:activity-ktx:1.1.0"
     }
 
@@ -53,14 +53,14 @@ object Libs {
         val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5"
     }
 
-    object Hilt{
+    object Hilt {
         const val hilt = "com.google.dagger:hilt-android:2.28-alpha"
         const val androidCompilerKapt = "com.google.dagger:hilt-android-compiler:2.28-alpha"
         const val lifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
         const val hiltCompilerKapt = "androidx.hilt:hilt-compiler:1.0.0-alpha01"
     }
 
-    object Retrofit{
+    object Retrofit {
         const val retrofit = "com.squareup.retrofit2:retrofit:2.6.0"
         const val gsonConverter = "com.squareup.retrofit2:converter-gson:2.6.0"
         const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.5.0"
@@ -79,5 +79,10 @@ object Libs {
             const val crashlyticsGradlePlugin =
                 "com.google.firebase:firebase-crashlytics-gradle:2.3.0"
         }
+    }
+
+    object Glide {
+        const val glide = "com.github.bumptech.glide:glide:4.12.0"
+        const val glideAnnotationProcessor = "com.github.bumptech.glide:compiler:4.12.0"
     }
 }

@@ -40,5 +40,8 @@ dependencies {
 
     implementation(Libs.vkSdk)
 
-//    implementation(Libs.viewBindingPropertyDelegate)
+    implementation(Libs.viewBindingPropertyDelegate)
+
+    implementation(Libs.Glide.glide)
+    implementation(Libs.Glide.glideAnnotationProcessor)
 }

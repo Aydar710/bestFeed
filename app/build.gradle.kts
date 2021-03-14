@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.konan.properties.loadProperties
-
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -80,4 +78,5 @@ dependencies {
     implementation(Libs.vkSdk)
 
 //    implementation(Libs.viewBindingPropertyDelegate)
+
 }
