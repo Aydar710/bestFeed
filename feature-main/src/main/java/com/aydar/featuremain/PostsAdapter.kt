@@ -26,7 +26,7 @@ class PostsAdapter : ListAdapter<Item, PostsAdapter.PostViewHolder>(PostDiffCall
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(post: Item) {
-            binding.tvText.text = post.text ?: "no text"
+            binding.tvText.text = "123456789123456789123456789123456789"
             binding.ivPhoto.setImageResource(R.drawable.san_fran)
 
             post.attachments?.let { attachments ->
@@ -38,6 +38,10 @@ class PostsAdapter : ListAdapter<Item, PostsAdapter.PostViewHolder>(PostDiffCall
                             .load(it)
                             .placeholder(R.drawable.san_fran)
                             .into(binding.ivPhoto)
+
+                        android.os.Handler().postDelayed({
+                            binding.root.invalidate()
+                        }, 3000)
                     }
                 }
             }
