@@ -25,13 +25,13 @@ class PostsAdapter : ListAdapter<Item, PostsAdapter.PostViewHolder>(PostDiffCall
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(post: Item) {
-            binding.tvText.text = "123456789123456789123456789123456789"
+            binding.tvText.text = post.text ?: ""
 
             post.attachments?.let { attachments ->
                 if (attachments.isNotEmpty()) {
                     val photos = attachments.map {
                         it.photo?.sizes?.last()?.url
-                    }
+                    }.filterNotNull()
                     val photosAdapter = PhotosAdapter()
                     binding.vpPhotos.adapter = photosAdapter
 
