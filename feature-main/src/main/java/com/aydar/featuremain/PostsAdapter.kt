@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.aydar.data.model.groupWallRemote.Item
 import com.aydar.featuremain.databinding.ItemFeedBinding
-import com.bumptech.glide.Glide
 
 class PostsAdapter : ListAdapter<Item, PostsAdapter.PostViewHolder>(PostDiffCallback) {
 
@@ -27,22 +26,23 @@ class PostsAdapter : ListAdapter<Item, PostsAdapter.PostViewHolder>(PostDiffCall
 
         fun bind(post: Item) {
             binding.tvText.text = "123456789123456789123456789123456789"
-            binding.ivPhoto.setImageResource(R.drawable.san_fran)
 
             post.attachments?.let { attachments ->
                 if (attachments.isNotEmpty()) {
-                    val photo = attachments[0].photo?.sizes?.last()?.url
-
-                    photo?.let {
-                        Glide.with(binding.root.context)
-                            .load(it)
-                            .placeholder(R.drawable.san_fran)
-                            .into(binding.ivPhoto)
-
-                        android.os.Handler().postDelayed({
-                            binding.root.invalidate()
-                        }, 3000)
+                    val photos = attachments.map {
+                        it.photo?.sizes?.last()?.url
                     }
+                    val photosAdapter = PhotosAdapter()
+                    binding.vpPhotos.adapter = photosAdapter
+
+                    binding.vpPhotos.addItemDecoration(
+                        HorizontalSpaceItemDecorator(
+                            binding.root.context.resources.getDimension(R.dimen.viewpager_space)
+                                .toInt()
+                        )
+                    )
+
+                    photosAdapter.submitList(photos)
                 }
             }
         }

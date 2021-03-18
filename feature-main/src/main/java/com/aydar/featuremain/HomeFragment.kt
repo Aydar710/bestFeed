@@ -34,7 +34,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         adapter = PostsAdapter()
         binding.vpPosts.adapter = adapter
         binding.vpPosts.addItemDecoration(
-            SpaceItemDecorator(
+            VerticalSpaceItemDecorator(
                 resources.getDimension(R.dimen.viewpager_space).toInt()
             )
         )
