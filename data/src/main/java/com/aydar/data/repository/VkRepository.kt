@@ -6,10 +6,11 @@ import javax.inject.Inject
 
 class VkRepository @Inject constructor(private val vkApi: VkApi) {
 
-    suspend fun getGroupPosts(): GroupWallResponseWrapper {
+    suspend fun getGroupPosts(domain: String, offset: Int): GroupWallResponseWrapper {
         return vkApi.getGroupPosts(
-            domain = "mudakoff",
-            count = "10"
+            domain = domain,
+            count = "20",
+            offset = offset.toString()
         )
     }
 }

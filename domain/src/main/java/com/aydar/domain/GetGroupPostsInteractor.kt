@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class GetGroupPostsInteractor @Inject constructor(private val vkRepository: VkRepository) {
 
-    suspend fun getGroupPosts(): List<Item>? {
-        return vkRepository.getGroupPosts().response?.items
+    suspend operator fun invoke(domain: String, offset: Int): List<Item>? {
+        return vkRepository.getGroupPosts(domain, offset).response?.items
     }
 }
