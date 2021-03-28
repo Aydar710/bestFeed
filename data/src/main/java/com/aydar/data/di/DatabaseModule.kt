@@ -22,7 +22,9 @@ class DatabaseModule {
             appContext,
             BestFeedDatabase::class.java,
             "BestFeedDatabase.db"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides

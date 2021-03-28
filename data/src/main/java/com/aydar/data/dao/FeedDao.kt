@@ -2,7 +2,6 @@ package com.aydar.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
-import androidx.room.Query
 import androidx.room.Transaction
 import com.aydar.data.local.AttachmentLocal
 import com.aydar.data.local.Feed
@@ -14,22 +13,27 @@ interface FeedDao {
 
     @Transaction
     suspend fun insert(feedCompound: FeedCompound) {
-        insertFeed(feedCompound.feed)
+        val feedId = insertFeed(feedCompound.feed)
         feedCompound.posts.forEach { postLocalCompound ->
-            insertPostLocal(postLocalCompound.post)
-            insertAttachments(postLocalCompound.attachments)
+            val postId = insertPostLocal(postLocalCompound.post.copy(feedId = feedId))
+            postLocalCompound.attachments.forEach { attachmentLocal ->
+                insertAttachments(attachmentLocal.copy(postId = postId))
+            }
         }
     }
 
     @Insert
-    suspend fun insertFeed(feed: Feed)
+    suspend fun insertFeed(feed: Feed): Long
 
     @Insert
-    suspend fun insertPostLocal(postLocal: PostLocal)
+    suspend fun insertPostLocal(postLocal: PostLocal): Long
 
     @Insert
-    suspend fun insertAttachments(attachmentsLocal: List<AttachmentLocal>)
+    suspend fun insertAttachments(attachmentLocal: AttachmentLocal)
 
+/*
+    @Transaction
     @Query("SELECT * FROM Feed WHERE id = :id")
     suspend fun getFeedById(id: Int): List<FeedCompound>
+*/
 }

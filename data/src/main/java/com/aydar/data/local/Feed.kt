@@ -9,9 +9,9 @@ import java.util.*
 @Entity
 data class Feed(
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    val date: Long = Date().time,
+    var id: Long = 0,
+    var date: Long = Date().time,
 
     @Ignore
-    val posts: List<Item>
+    var posts: List<Item>? = null
 )

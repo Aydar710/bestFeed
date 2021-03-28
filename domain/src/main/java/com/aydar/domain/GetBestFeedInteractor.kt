@@ -4,7 +4,11 @@ import android.text.format.DateUtils
 import com.aydar.data.model.groupWallRemote.Item
 import javax.inject.Inject
 
-class GetBestFeedInteractor @Inject constructor(private val getGroupPostsInteractor: GetGroupPostsInteractor) {
+class GetBestFeedInteractor
+@Inject constructor(
+    private val getGroupPostsInteractor: GetGroupPostsInteractor,
+    private val saveFeedInteractor: SaveFeedInteractor
+) {
 
     suspend operator fun invoke(domains: List<String>): List<Item> {
         val allPosts = mutableListOf<Item>()
@@ -12,6 +16,7 @@ class GetBestFeedInteractor @Inject constructor(private val getGroupPostsInterac
             allPosts.addAll(getAllTodayPosts(domain))
         }
 
+        saveFeedInteractor.invoke(allPosts)
         return allPosts.filteredByMostPopular(5)
     }
 

@@ -9,7 +9,7 @@ import com.aydar.data.local.PostLocal
 
 @Database(
     entities = [Feed::class, PostLocal::class, AttachmentLocal::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class BestFeedDatabase : RoomDatabase() {

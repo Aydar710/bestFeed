@@ -6,15 +6,15 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class PostLocal(
-        @PrimaryKey
-        val id: Int = 0,
+        @PrimaryKey(autoGenerate = true)
+        val id: Long = 0,
         @ForeignKey(
                 entity = Feed::class,
                 parentColumns = ["id"],
                 childColumns = ["feedId"],
                 onDelete = ForeignKey.CASCADE
         )
-        val feedId: Int? = null,
+        val feedId: Long? = null,
         val date: Int? = null,
         val text: String? = null
 )
