@@ -2,4 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aydar.data">
 
+    <application>
+        <activity android:name=".DaggerActivity"></activity>
+    </application>
+
 </manifest>

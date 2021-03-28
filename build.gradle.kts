@@ -1,7 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     val kotlinVersion by extra("1.4.10")
-    val hiltVersion = "2.28-alpha"
+    val kotlin_version by extra("1.4.10")
+    val hiltVersion = "2.33-beta"
     repositories {
         google()
         jcenter()

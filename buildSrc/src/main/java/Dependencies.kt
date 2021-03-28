@@ -54,8 +54,9 @@ object Libs {
     }
 
     object Hilt {
-        const val hilt = "com.google.dagger:hilt-android:2.28-alpha"
-        const val androidCompilerKapt = "com.google.dagger:hilt-android-compiler:2.28-alpha"
+        private const val hiltVersion = "2.33-beta"
+        const val hilt = "com.google.dagger:hilt-android:$hiltVersion"
+        const val androidCompilerKapt = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         const val lifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
         const val hiltCompilerKapt = "androidx.hilt:hilt-compiler:1.0.0-alpha01"
     }
@@ -79,6 +80,14 @@ object Libs {
             const val crashlyticsGradlePlugin =
                 "com.google.firebase:firebase-crashlytics-gradle:2.3.0"
         }
+    }
+
+    object Room {
+        private const val roomVersion = "2.2.6"
+        const val room = "androidx.room:room-runtime:$roomVersion"
+        const val annotationProcessor = "androidx.room:room-compiler:$roomVersion"
+        const val extAndCoroutines = "androidx.room:room-ktx:$roomVersion"
+        const val common = "androidx.room:room-common:$roomVersion"
     }
 
     object Glide {

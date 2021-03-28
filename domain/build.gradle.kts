@@ -31,5 +31,4 @@ dependencies {
     implementation(Libs.Retrofit.gsonConverter)
     implementation(Libs.Retrofit.loggingInterceptor)
 
-//    implementation(Libs.viewBindingPropertyDelegate)
 }

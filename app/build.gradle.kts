@@ -1,8 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -76,6 +76,13 @@ dependencies {
     implementation(Libs.Retrofit.loggingInterceptor)
 
     implementation(Libs.vkSdk)
+
+    // Room
+    implementation(Libs.Room.room)
+    implementation(Libs.Room.extAndCoroutines)
+    kapt(Libs.Room.annotationProcessor)
+    implementation(Libs.Room.common)
+    // end Room
 
 //    implementation(Libs.viewBindingPropertyDelegate)
 
