@@ -23,7 +23,6 @@ dependencies {
     // Hilt
     implementation(Libs.Hilt.hilt)
     kapt(Libs.Hilt.androidCompilerKapt)
-    implementation(Libs.Hilt.lifecycleViewModel)
     kapt(Libs.Hilt.hiltCompilerKapt)
 
     // Retrofit

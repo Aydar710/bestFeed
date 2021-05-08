@@ -54,10 +54,9 @@ object Libs {
     }
 
     object Hilt {
-        private const val hiltVersion = "2.33-beta"
+        private const val hiltVersion = "2.35"
         const val hilt = "com.google.dagger:hilt-android:$hiltVersion"
         const val androidCompilerKapt = "com.google.dagger:hilt-android-compiler:$hiltVersion"
-        const val lifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
         const val hiltCompilerKapt = "androidx.hilt:hilt-compiler:1.0.0-alpha01"
     }
 
@@ -88,6 +87,11 @@ object Libs {
         const val annotationProcessor = "androidx.room:room-compiler:$roomVersion"
         const val extAndCoroutines = "androidx.room:room-ktx:$roomVersion"
         const val common = "androidx.room:room-common:$roomVersion"
+    }
+
+    object WorkManager {
+        private const val version = "2.5.0"
+        const val workManager = "androidx.work:work-runtime-ktx:$version"
     }
 
     object Glide {

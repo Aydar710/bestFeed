@@ -1,10 +1,12 @@
 package com.aydar.bestfeed
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.aydar.data.Preferences
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel @ViewModelInject constructor(private val preferences: Preferences) :
+@HiltViewModel
+class MainViewModel @Inject constructor(private val preferences: Preferences) :
     ViewModel() {
 
     val eventAuthorize = SingleLiveEvent<Unit>()

@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -66,8 +67,8 @@ dependencies {
 
     // Hilt
     implementation(Libs.Hilt.hilt)
+    implementation("com.google.firebase:firebase-messaging:20.1.0")
     kapt(Libs.Hilt.androidCompilerKapt)
-    implementation(Libs.Hilt.lifecycleViewModel)
     kapt(Libs.Hilt.hiltCompilerKapt)
 
     // Retrofit
